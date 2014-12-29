@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{9250ACDB-5764-6F4B-36DD-7CDB78075D02}</ProjectGuid>
+	<ProjectGuid>{AC8031CA-00F6-BC6C-6915-224DC529FF25}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Sources\DestroyZone.cs" />
      <Compile Include="Assets\Sources\Missile.cs" />
      <Compile Include="Assets\Sources\MissileProcess.cs" />
+     <Compile Include="Assets\Sources\Monster.cs" />
      <Compile Include="Assets\Sources\PlayerMove.cs" />
      <Compile Include="Assets\Sources\Test.cs" />
   </ItemGroup>
