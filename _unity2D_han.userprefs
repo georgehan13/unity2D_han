@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Users\user\Documents\New atto\Assets\Scripts\CharacterMove.cs">
+    <Files>
+      <File FileName="C:\Users\user\Documents\New atto\Assets\Scripts\CharacterMove.cs" Line="23" Column="3" />
+      <File FileName="C:\Users\user\Documents\New atto\Assets\Scripts\MouseLook.cs" Line="22" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
