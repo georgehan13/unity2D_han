@@ -7,7 +7,9 @@ public class Monster : MonoBehaviour
 
 	void Start () 
 	{
-	
+		animator = GetComponent<Animator>();
+		animator.SetBool ("Check", true);
+
 	}
 
 	void Update () 
