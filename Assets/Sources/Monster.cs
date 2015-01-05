@@ -9,10 +9,11 @@ public class Monster : MonoBehaviour
 		Idle,
 		Damage,
 		Die
-	}
+	};
 
 	Animator animator = null;
 	MonsterState state = MonsterState.None;
+
 
 	void Start () 
 	{
@@ -22,8 +23,22 @@ public class Monster : MonoBehaviour
 
 		//animator.SetBool ("Check", true);
 
-
+	
 	}
+
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		state = MonsterState.Damage;
+		animator.SetInteger("State", (int)state);
+	}
+
+
+	public void Damage()
+	{
+		state = MonsterState.Idle;
+		animator.SetInteger("State", (int)state);
+	}
+
 
 	void Update () 
 	{
@@ -40,4 +55,6 @@ public class Monster : MonoBehaviour
 
 
 	}
+
+
 }
