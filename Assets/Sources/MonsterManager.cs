@@ -29,9 +29,13 @@ public class MonsterManager : MonoBehaviour
 
 			for(int i = 0;i < 5; i++)
 			{
-				GameObject obj = Instantiate(enemy) as GameObject
-				obj.transform.ImagePosition = 
+				GameObject obj = Instantiate(enemy) as GameObject;
+				obj.transform.position = new Vector2(startX, 3.5f); 
+				//vector3 to vector2... Z value is automatic "0"
+				startX++;
 			}
+
+			startX = -2; // ??? 이건 뭐???
 			interval = 0;
 		}
 	}
