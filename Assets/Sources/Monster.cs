@@ -24,11 +24,26 @@ public class Monster : MonoBehaviour
 		animator.SetInteger("State", (int)state);
 		//animator.SetBool ("Check", true);
 
+		this.rigidbody2D.velocity = new Vector2(0,-3);
 	
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
+		if(state == MonsterState.Die)
+		{
+			return;
+		}
+
+
+		int layerIndex = other.gameObject.layer;
+		//if(layerIndex == 8) no8 could be interupt by engine
+		if(layerIndex == LayerMask.NameToLayer("Missile"))
+		{
+			Destroy(other.gameObject);
+		}
+
+
 		isDamage = true;
 		state = MonsterState.Damage;
 		animator.SetInteger("State", (int)state);
