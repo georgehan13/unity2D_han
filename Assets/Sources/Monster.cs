@@ -56,6 +56,11 @@ public class Monster : MonoBehaviour
 		animator.SetInteger("State", (int)state);
 	}
 
+	public void Die()
+	{
+		Destroy(this.gameObject);
+	}
+
 
 	void Update () 
 	{
