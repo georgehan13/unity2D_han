@@ -14,13 +14,14 @@ public class Monster : MonoBehaviour
 	Animator animator = null;
 	MonsterState state = MonsterState.None;
 
+	bool isDamage = false;
+	int hp = 5;
 
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
 		state = MonsterState.Idle;
 		animator.SetInteger("State", (int)state);
-
 		//animator.SetBool ("Check", true);
 
 	
@@ -28,13 +29,29 @@ public class Monster : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
+		isDamage = true;
 		state = MonsterState.Damage;
 		animator.SetInteger("State", (int)state);
+
+		//hp -= 2;
+		hp--;
+
+		if (hp <= 0)
+		{
+			state = MonsterState.Die;
+			animator.SetInteger("State", (int)state);
+		}
 	}
 
 
 	public void Damage()
 	{
+		if(isDamage == true)
+		{
+			isDamage = false;
+			return;
+		}
+
 		state = MonsterState.Idle;
 		animator.SetInteger("State", (int)state);
 	}
