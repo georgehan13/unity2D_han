@@ -6,6 +6,7 @@ public class MeteoriteManager : MonoBehaviour
 	public GameObject alarm = null;
 	public GameObject meteorite = null;
 	public GameObject tail = null;
+	public Transform alarmPosition = null;
 
 
 	void Start () 
@@ -31,7 +32,7 @@ public class MeteoriteManager : MonoBehaviour
 		yield return new WaitForSeconds(time);
 
 		GameObject alarmObj = Instantiate(alarm) as GameObject;
-		alarmObj.transform.position = this.transform.position;
+		alarmObj.transform.position = alarmPosition.position; //this.transform.position;
 
 		float length = alarmObj.animation["Alarm"].length;
 		yield return new WaitForSeconds(length);

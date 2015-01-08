@@ -53,6 +53,7 @@
      <Compile Include="Assets\Sources\Monster.cs" />
      <Compile Include="Assets\Sources\MonsterManager.cs" />
      <Compile Include="Assets\Sources\PlayerMove.cs" />
+     <Compile Include="Assets\Sources\PlayerState.cs" />
      <Compile Include="Assets\Sources\Test.cs" />
      <Compile Include="Assets\Sources\TestWeb.cs" />
  <Reference Include="UnityEngine.UI">
