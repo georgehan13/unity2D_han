@@ -32,7 +32,12 @@ public class MeteoriteManager : MonoBehaviour
 
 		GameObject alarmObj = Instantiate(alarm) as GameObject;
 		alarmObj.transform.position = this.transform.position;
-	
+
+		float length = alarmObj.animation["Alarm"].length;
+		yield return new WaitForSeconds(length);
+
+		Destroy(alarmObj);
+
 	}
 
 	/*
