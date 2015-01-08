@@ -54,6 +54,7 @@
      <Compile Include="Assets\Sources\MonsterManager.cs" />
      <Compile Include="Assets\Sources\PlayerMove.cs" />
      <Compile Include="Assets\Sources\Test.cs" />
+     <Compile Include="Assets\Sources\TestWeb.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
