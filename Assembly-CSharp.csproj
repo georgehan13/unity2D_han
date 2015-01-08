@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Sources\DestroyZone.cs" />
+     <Compile Include="Assets\Sources\MeteoriteManager.cs" />
      <Compile Include="Assets\Sources\Missile.cs" />
      <Compile Include="Assets\Sources\MissileProcess.cs" />
      <Compile Include="Assets\Sources\Monster.cs" />
