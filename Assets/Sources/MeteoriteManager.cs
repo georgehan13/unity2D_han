@@ -38,6 +38,16 @@ public class MeteoriteManager : MonoBehaviour
 
 		Destroy(alarmObj);
 
+		GameObject meteoriteObj = Instantiate(meteorite) as GameObject;
+		meteoriteObj.transform.position = this.transform.position;
+
+		GameObject tailObj = Instantiate(tail) as GameObject;
+		tailObj.transform.position = this.transform.position;
+		tailObj.renderer.sortingLayerName = "Tail";
+		tailObj.transform.parent = meteoriteObj.transform;
+
+		StartCoroutine(Call ());
+
 	}
 
 	/*
