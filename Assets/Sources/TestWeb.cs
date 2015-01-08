@@ -24,6 +24,14 @@ public class TestWeb : MonoBehaviour
 		}
 	}
 
+	void OnGUI()
+	{
+		if(isDownLoad == true)
+		{
+			GUI.Box (new Rect(0,0,64,64), www.texture);
+		}
+	}
+
 	void Update()
 	{
 		if(isDownLoad == false)
