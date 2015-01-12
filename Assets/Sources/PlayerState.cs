@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerState : MonoBehaviour 
 {
+	public UILabel goldLabel = null;
+	int goldCount = 0;
 
 	void Start () 
 	{
@@ -23,6 +25,9 @@ public class PlayerState : MonoBehaviour
 
 		else if(other.gameObject.layer == LayerMask.NameToLayer("Gold"))
 		{
+			goldCount++;
+			goldLabel.text = "Gold : "+goldCount;
+
 			Destroy(other.gameObject);
 		}
 	}
