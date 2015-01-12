@@ -23,7 +23,7 @@ public class PlayerState : MonoBehaviour
 
 		else if(other.gameObject.layer == LayerMask.NameToLayer("Gold"))
 		{
-			Application.LoadLevel ("Result");
+			Destroy(other.gameObject);
 		}
 	}
 	
