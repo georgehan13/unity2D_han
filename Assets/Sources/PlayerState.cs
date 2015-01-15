@@ -12,6 +12,8 @@ public class PlayerState : MonoBehaviour
 	int monsterDieCount = 0;
 	int scoreCount = 0;
 
+	bool isDead = false;
+
 	public int MonsterDieCount
 	{
 		get
@@ -35,12 +37,14 @@ public class PlayerState : MonoBehaviour
 	{
 		if(other.gameObject.layer == LayerMask.NameToLayer("Monster"))
 		{
-			Application.LoadLevel ("Result");
+			//Application.LoadLevel ("Result");
+			isDead = true;
 		}
 
 		else if(other.gameObject.layer == LayerMask.NameToLayer("Meteorite"))
 		{
-			Application.LoadLevel ("Result");
+			//Application.LoadLevel ("Result");
+			isDead = true;
 		}
 
 		else if(other.gameObject.layer == LayerMask.NameToLayer("Gold"))
@@ -54,6 +58,14 @@ public class PlayerState : MonoBehaviour
 	
 	void Update () 
 	{
+		if (isDead == true)
+		{
+			PlayerPrefs.SetInt("Score", scoreCount);
+			//PlayerPrefs.SetString("Name", "kim");
+			Application.LoadLevel ("Result");
+			return;
+		}
+
 		meterCount += 1*Time.deltaTime;
 		int iMeter = (int)meterCount;
 
