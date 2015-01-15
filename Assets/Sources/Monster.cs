@@ -20,6 +20,8 @@ public class Monster : MonoBehaviour
 	bool isDamage = false;
 	int hp = 5;
 
+	public GameObject gold = null;
+
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
@@ -61,6 +63,8 @@ public class Monster : MonoBehaviour
 			state = MonsterState.Die;
 			animator.SetInteger("State", (int)state);
 			playerState.MonsterDieCount++;
+
+			this.collider2D.enabled = false; //몬스터 연기랑 부딛쳤을때 플레이어 죽는것 방지
 		}
 	}
 
@@ -80,6 +84,15 @@ public class Monster : MonoBehaviour
 	public void Die()
 	{
 		Destroy(this.gameObject);
+	}
+
+	public void CreateGold()
+	{
+		GameObject obj = Instantiate(gold) as GameObject; //생성
+		obj.transform.position = this.transform.position; //위치
+
+		float x = Random.Range(-1.5f, 1.5f);
+		obj.rigidbody2D.velocity = new Vector2(x, 5);
 	}
 
 
