@@ -9,7 +9,10 @@ public class Monster : MonoBehaviour
 		Idle,
 		Damage,
 		Die
-	};
+	}
+
+	//public PlayerState playerState = null; < 메모리 로드 전이라 연결안됨.
+	PlayerState playerState = null;
 
 	Animator animator = null;
 	MonsterState state = MonsterState.None;
@@ -25,6 +28,8 @@ public class Monster : MonoBehaviour
 		//animator.SetBool ("Check", true);
 
 		this.rigidbody2D.velocity = new Vector2(0,-3);
+
+		playerState = GameObject.Find ("Player").GetComponent<PlayerState>();
 	
 	}
 
@@ -55,6 +60,7 @@ public class Monster : MonoBehaviour
 		{
 			state = MonsterState.Die;
 			animator.SetInteger("State", (int)state);
+			playerState.MonsterDieCount++;
 		}
 	}
 
