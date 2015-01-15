@@ -5,10 +5,12 @@ public class PlayerState : MonoBehaviour
 {
 	public UILabel goldLabel = null;
 	public UILabel meterLabel = null;
+	public UILabel scoreLabel = null;
 
 	int goldCount = 0;
 	float meterCount = 0;
 	int monsterDieCount = 0;
+	int scoreCount = 0;
 
 	public int MonsterDieCount
 	{
@@ -56,6 +58,9 @@ public class PlayerState : MonoBehaviour
 		int iMeter = (int)meterCount;
 
 		meterLabel.text = "" + iMeter + "M";
+
+		scoreCount = goldCount + iMeter + monsterDieCount;
+		scoreLabel.text = "Score : " + scoreCount;
 
 
 	
